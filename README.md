@@ -3,8 +3,10 @@
 http://health.apmall.tw/import.html
 
 Screenshot 1:
-![alt tag](https://github.com/KevinHu2014/HackNtu2016/blob/master/螢幕快照%202016-08-21%20上午11.38.35.png)
+
+![alt tag](https://github.com/KevinHu2014/HackNtu2016/blob/master/screenshot1.png)
 
 
 Screenshot 2:
 
+![alt tag](https://github.com/KevinHu2014/HackNtu2016/blob/master/screenshot2.png)
