@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>健康e點通</title>
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<link href="css/dialog.css" rel="stylesheet" type="text/css">
+<link href="css/detail.css" rel="stylesheet" type="text/css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.1/Chart.bundle.js"></script>
+<script type="text/javascript" src="js/detail.js"></script>
+<script >var mdata = [0,0,0,0,0,0,0,0,0,0,0,0];</script>
+</head>
+<body>
+
+<div class="row">
+  <div class="col-md-12" style="background-color: #01b9af; height: 50px">
+    <div class="logo"> <a href="cloud.html">Back</a> 健康e點通</div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-1"></div>
+  <div class="col-md-10">
+     <h2 id="sickness-name">全身性骨關節病</h2>
+  </div>
+  <div class="col-md-1"></div>
+</div>  
+<div class="row">
+  <div class="col-md-1"></div>
+  <div class="col-md-5">
+    <div class="row">
+      <div class="col-md-12">
+        <h2>症狀</h2>
+        <div id="symptom" class="well">...</div>
+      </div>
+      <div class="col-md-12">
+        <h2>建議</h2>
+        <div id="solution" class="well">...</div>
+      </div>
+          <div class="col-md-12">
+        <h2>預約回診時間</h2>
+        <select id="selectyear" >
+            <option>2016</option>
+            <option>2017</option>
+            <option>2018</option>
+            <option>2019</option>
+            <option>2020</option>
+        </select>       
+        <select id="selectmonth" >
+            <option>一月</option>
+            <option>二月</option>
+            <option>三月</option>
+            <option>四月</option>
+            <option>五月</option>
+            <option>六月</option>
+            <option>七月</option>
+            <option>八月</option>
+            <option>九月</option>
+            <option>十月</option>
+            <option>十一月</option>
+            <option>十二月</option>
+        </select>     
+        <select id="selectday">
+            <option>01</option><option>02</option><option>03</option><option>04</option><option>05</option>
+            <option>06</option><option>07</option><option>08</option><option>09</option><option>10</option>
+            <option>11</option><option>12</option><option>13</option><option>14</option><option>15</option>
+            <option>16</option><option>17</option><option>18</option><option>19</option><option>20</option>
+            <option>21</option><option>22</option><option>23</option><option>24</option><option>25</option>
+            <option>26</option><option>27</option><option>28</option><option>29</option><option>30</option>
+            <option>31</option>
+        </select>
+        <input type="button" value="確認預約">
+      </div>
+    </div>
+  </div>
+  <div class="col-md-5">
+    <div class="row">
+      <div class="col-md-12"><h1> </h1></div>
+      <div class="col-md-12">
+        <div class="btn-group btn-group-justified" role="group" aria-label="..."style="marginTop:30px;">
+          <div class="btn-group" role="group">
+            <button type="button" class="btn btn-default" onclick="my2014()">2014</button>
+            <script>
+            function my2014() {
+                for(var i=0;i<12;i++){
+                  mdata[i] = m2014[i];
+                  console.log(mdata[i]);
+                }
+                var ctx = document.getElementById("myLineChart");
+                  console.log(mdata);
+                  var myLineChart = new Chart(ctx, {
+                      type: 'line',
+                      data: {
+                          
+                          labels: ["January", "February", "March", "April", "May", "June", "July","August","September","October","November","December"],
+                          datasets: [{
+                              label: " ",
+                              data: mdata,
+                              backgroundColor: "rgba(75,192,192,0.4)",
+                              borderColor: "rgba(75,192,192,1)",
+                              borderWidth: 1
+                          }]
+                      },
+                      options: {
+                          scales: {
+                              yAxes: [{
+                                  ticks: {
+                                      beginAtZero:true
+                                  }
+                              }]
+                          }
+                      }
+                  });
+          
+            }
+            </script>
+          </div>
+          <div class="btn-group" role="group">
+            <button type="button" class="btn btn-default" onclick="my2015()">2015</button>
+            <script>
+            function my2015() {
+                for(var i=0;i<12;i++){
+                  mdata[i] = m2015[i];
+                  console.log(mdata[i]);
+                }
+                var ctx = document.getElementById("myLineChart");
+                  console.log(mdata);
+                  var myLineChart = new Chart(ctx, {
+                      type: 'line',
+                      data: {
+                          
+                          labels: ["January", "February", "March", "April", "May", "June", "July","August","September","October","November","December"],
+                          datasets: [{
+                              label: " ",
+                              data: mdata,
+                              backgroundColor: "rgba(75,192,192,0.4)",
+                              borderColor: "rgba(75,192,192,1)",
+                              borderWidth: 1
+                          }]
+                      },
+                      options: {
+                          scales: {
+                              yAxes: [{
+                                  ticks: {
+                                      beginAtZero:true
+                                  }
+                              }]
+                          }
+                      }
+                  });
+            }
+            </script>
+          </div>
+          <div class="btn-group" role="group">
+            <button type="button" class="btn btn-default" onclick="my2016()">2016</button>
+            <script>
+            function my2016() {
+                for(var i=0;i<12;i++){
+                  mdata[i] = m2016[i];
+                  console.log(mdata[i]);
+                }
+                var ctx = document.getElementById("myLineChart");
+                  console.log(mdata);
+                  var myLineChart = new Chart(ctx, {
+                      type: 'line',
+                      data: {
+                          
+                          labels: ["January", "February", "March", "April", "May", "June", "July","August","September","October","November","December"],
+                          datasets: [{
+                              label: " ",
+                              data: mdata,
+                              backgroundColor: "rgba(75,192,192,0.4)",
+                              borderColor: "rgba(75,192,192,1)",
+                              borderWidth: 1
+                          }]
+                      },
+                      options: {
+                          scales: {
+                              yAxes: [{
+                                  ticks: {
+                                      beginAtZero:true
+                                  }
+                              }]
+                          }
+                      }
+                  });
+            }
+            </script>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <h2>時間軸</h2>
+        <canvas id="myLineChart" width="300" height="200"></canvas>
+          <script>
+          var ctx = document.getElementById("myLineChart");
+                  console.log(mdata);
+                  var myLineChart = new Chart(ctx, {
+                      type: 'line',
+                      data: {
+                          
+                          labels: ["January", "February", "March", "April", "May", "June", "July","August","September","October","November","December"],
+                          datasets: [{
+                              label: " ",
+                              data: m2014,
+                              backgroundColor: "rgba(75,192,192,0.4)",
+                              borderColor: "rgba(75,192,192,1)",
+                              borderWidth: 1
+                          }]
+                      },
+                      options: {
+                          scales: {
+                              yAxes: [{
+                                  ticks: {
+                                      beginAtZero:true
+                                  }
+                              }]
+                          }
+                      }
+                  });
+          </script>
+      </div>
+      <div class="col-md-12">
+        <h2>詳細就醫資料</h2>
+        <div class="panel panel-default">
+          <!-- Default panel contents -->
+          <div class="panel-heading">門診資料</div>
+          <!-- Table -->
+           <table class="table"> <thead> <tr> <th>#</th> <th>就醫日期</th> <th>疾病名稱</th> <th>醫事機構</th> </tr> </thead></table>
+        </div>  
+      </div>
+    </div>
+  </div>
+  <div class="col-md-1"></div>
+</div>
+</body>
+</html>

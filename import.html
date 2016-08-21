@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>健康e點通</title>
+<link href="css/main.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="js/import.js"></script>
+</head>
+
+<body>
+<div id="head">
+  <div class="logo">健康e點通</div>
+</div>
+<div id="context">
+  <div id="widgets">
+    <div class="import-data">
+      <div class="title">匯入健康存摺資料</div>
+      <div class="container">
+        <input id="uploadFile" placeholder="檔案名稱" disabled="disabled" />
+        <div class="fileUpload btn btn-primary"> <span>選擇檔案</span>
+          <input id="uploadBtn" type="file" class="upload" accept="text/xml" />
+        </div>
+        <div class="caption">
+          <p>如何取得健康存摺資料</p>
+          <p>1．前往中央健康保險署「健康存摺」網站</p>
+          <p>2．透過健保卡或自然人憑證登入</p>
+          <p>3．點選「資料申請」按鈕</p>
+          <p>4．稍後十分鐘，再點選「重新整理」按鈕</p>
+          <p>5．於申請結果之「加值服務」頁籤，勾選「醫療資料」項目，最後按「下載」</p>
+          <p>6．最後將下載的檔案進行解壓縮</p>
+        </div>
+      </div>
+    </div>
+    <div class="fileUpload btn btn-primary"> <span>下一步</span>
+      <input class="upload" id="next-import" />
+    </div>
+  </div>
+</div>
+<footer>支援瀏覽器：IE10、Chrome38、FireFox28以上的版本</footer>
+</body>
+</html>
